@@ -1,0 +1,23 @@
+{
+    "name": "coderfixlab/Yii2-image-cropper",
+    "description": "Yii2图片裁剪小部件",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension","cropper","widget","image"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "xiaoyu",
+            "email": "calvin@coderfix.cn",
+            "homepage": "https://github.com/coderfix-lab/Yii2-image-cropper"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*",
+        "yiisoft/yii2-bootstrap": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "coderfixlab\\cropper\\": "src/"
+        }
+    }
+}
