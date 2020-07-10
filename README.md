@@ -13,6 +13,21 @@ composer require coderfixlab/yii2-image-cropper
 
 ## 快速配置 
 
+
+### model
+
+不要把`image`设置成file，看做文本即可，因为图片上传操作并没有经过业务的表，部件返回给input的实际上是个文本。
+
+```php
+
+    public function rules() {
+        return [
+            [['image'], 'string'],
+        ];
+    }
+
+```
+
 ### view
 
 ```php
