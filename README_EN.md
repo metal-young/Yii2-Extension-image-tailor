@@ -1,17 +1,18 @@
 # Yii2-image-cropper
-Yii2的图片裁切小部件
+Yii2's image crop widget
 
 -----
 [![Latest Stable Version](https://poser.pugx.org/coderfixlab/yii2-image-cropper/v)](//packagist.org/packages/coderfixlab/yii2-image-cropper) [![Total Downloads](https://poser.pugx.org/coderfixlab/yii2-image-cropper/downloads)](//packagist.org/packages/coderfixlab/yii2-image-cropper) [![Latest Unstable Version](https://poser.pugx.org/coderfixlab/yii2-image-cropper/v/unstable)](//packagist.org/packages/coderfixlab/yii2-image-cropper) [![License](https://poser.pugx.org/coderfixlab/yii2-image-cropper/license)](//packagist.org/packages/coderfixlab/yii2-image-cropper)
-## 安装
 
-推荐使用composer安装
+## install
+
+Recommended to use composer to install
 
 ```shell
 composer require coderfixlab/yii2-image-cropper
 ```
 
-## 快速配置 
+## Quick configuration 
 
 ### view
 
@@ -19,8 +20,8 @@ composer require coderfixlab/yii2-image-cropper
 
     <?=  $form->field($model, 'image')->widget(\coderfixlab\cropper\Cropper::className(), [
         'label' => '选择图片',
-        'imageUrl' => Yii::$app->tools->getImagesUrl($model->image), //页面展示的图片路径
-        'value'=>$model->image, //在input中作为表单值的图片路径
+        'imageUrl' => Yii::$app->tools->getImagesUrl($model->image), //preview
+        'value'=>$model->image, //value
         'cropperOptions' => [
             //裁切尺寸
             'width' => 518, 
@@ -32,9 +33,9 @@ composer require coderfixlab/yii2-image-cropper
             ],
         ],
         'uploadOptions'=>[
-            'url'=>'/upload/upload-crop', //图片上传路径
-            'response'=>'res.url', //返回预览的完整图片地址
-            'attachment'=>'res.attachment' //返回给input中作为表单值的图片路径
+            'url'=>'/upload/upload-crop', //upload path
+            'response'=>'res.url', //preview url
+            'attachment'=>'res.attachment' //value 
         ],
         'jsOptions' => [
             'pos' => \yii\web\View::POS_END, // default is POS_END if not specified
@@ -47,13 +48,13 @@ composer require coderfixlab/yii2-image-cropper
 
 ```
 
-### 上传控制器
+### Controller
 
-图片上传到 `uploadOptions`的`url`地址中
+ `uploadOptions` - `url`
 
-会模拟表单提交image的文件域
+Will simulate the file field of the form submission image
 
-参考处理代码
+Reference processing code
 
 ```php
 
@@ -77,30 +78,28 @@ composer require coderfixlab/yii2-image-cropper
 
 ```
 
-注意：必定返回的为在`uploadOptions`中定义的`url`和`attachment`，但是并不唯一，当修改视图配置后对应返回格式也要修改
 
 
+## Screenshot
 
-## 截图
 
+### Page load
+![Page load](https://img-blog.csdnimg.cn/20200710135631425.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2RpYW5kaWFueGl5dQ==,size_16,color_FFFFFF,t_70) 
 
-### 页面载入
-![页面](https://img-blog.csdnimg.cn/20200710135631425.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2RpYW5kaWFueGl5dQ==,size_16,color_FFFFFF,t_70) 
-
-### 裁切图片
+### Crop 
 
 ![裁切图片](https://img-blog.csdnimg.cn/20200710135740746.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2RpYW5kaWFueGl5dQ==,size_16,color_FFFFFF,t_70)
 
-### 裁切完成
+### Crop complete
 
 ![裁切完成](https://img-blog.csdnimg.cn/2020071013581885.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2RpYW5kaWFueGl5dQ==,size_16,color_FFFFFF,t_70)
 
 
 ## TODO
 
- - 图片上传状态提示
- - 文档完善
+ - Image upload status prompt
+ - Perfect documentation
 
-## 开源协议
+## Open source agreement
 
-本项目基于 MIT License.
+MIT License.

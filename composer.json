@@ -3,6 +3,7 @@
     "description": "Yii2图片裁剪小部件",
     "type": "yii2-extension",
     "keywords": ["yii2","extension","cropper","widget","image"],
+    "homepage": "https://github.com/coderfix-lab/Yii2-image-cropper",
     "license": "MIT",
     "authors": [
         {
