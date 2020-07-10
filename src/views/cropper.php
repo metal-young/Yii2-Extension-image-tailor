@@ -10,7 +10,8 @@
 /** @var $cropperOptions mixed */
 /** @var $jsOptions mixed */
 /** @var $template string */
-
+/** @var $increase int */
+/** @var $isRawSize int */
 /** @var $noImage string */
 
 
@@ -355,11 +356,18 @@ $this->registerJs(<<<JS
     });
     
     function setCrop$uniqueId() {
-        options_$uniqueId.element.image.cropper('getCroppedCanvas', {
-              width: options_$uniqueId.data.cropWidth,
-              height: options_$uniqueId.data.cropHeight,
-           
-           }).toBlob(function (blob) {
+        if('$isRawSize' != ''){
+            getCroppedCanvasOptions =  {
+              width: options_$uniqueId.data.width ,
+              height: options_$uniqueId.data.height ,
+           }
+        }else{
+            getCroppedCanvasOptions =  {
+              width: options_$uniqueId.data.cropWidth * $increase,
+              height: options_$uniqueId.data.cropHeight * $increase,
+           }
+        }
+        options_$uniqueId.element.image.cropper('getCroppedCanvas', getCroppedCanvasOptions).toBlob(function (blob) {
             const formData = new FormData();
             formData.append('image', blob/*, 'example.png' */);
             console.log("$uploadUrl");

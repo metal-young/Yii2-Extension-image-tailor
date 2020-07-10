@@ -43,6 +43,8 @@ class Cropper extends InputWidget
      */
     public $noImage = '';
 
+
+
     /**
      * width int must be specified
      * height int must be specified
@@ -97,7 +99,17 @@ class Cropper extends InputWidget
      */
     public $label;
 
+    /**
+     * 裁切方法倍率 默认1
+     * @var int
+     */
+    public $increase = 1;
 
+    /**
+     * 是否上传裁切后的原图尺寸，默认false,如果设置为true则$increase无效
+     * @var bool
+     */
+    public $isRawSize = false;
 
     /**
      * default '{button} {preview}'
@@ -150,6 +162,8 @@ class Cropper extends InputWidget
             'jsOptions' => $this->jsOptions,
             'template' => $this->template,
             'noImage' => $this->noImage,
+            'increase'=>$this->increase,
+            'isRawSize'=>$this->isRawSize,
         ]);
     }
 
