@@ -1,4 +1,4 @@
-# Yii2-image-cropper
+# Yii2-Extension-image-tailor
 Yii2的图片裁切小部件
 
 -----
