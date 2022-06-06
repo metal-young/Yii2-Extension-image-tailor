@@ -8,7 +8,7 @@ Yii2的图片裁切小部件
 推荐使用composer安装
 
 ```shell
-composer require [coderfixlab/yii2-image-cropper](https://packagist.org/packages/metalyoung/yii2-extension-image-tailor)
+composer require metalyoung/yii2-extension-image-tailor
 ```
 
 ## 快速配置 
