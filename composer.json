@@ -1,15 +1,15 @@
 {
-    "name": "coderfixlab/yii2-image-cropper",
+    "name": "metalyoung/yii2-extension-image-tailor",
     "description": "Yii2图片裁剪小部件",
     "type": "yii2-extension",
     "keywords": ["yii2","extension","cropper","widget","image"],
-    "homepage": "https://github.com/coderfix-lab/Yii2-image-cropper",
+    "homepage": "https://github.com/metal-young/Yii2-Extension-image-tailor",
     "license": "MIT",
     "authors": [
         {
             "name": "xiaoyu",
-            "email": "calvin@coderfix.cn",
-            "homepage": "https://github.com/coderfix-lab/Yii2-image-cropper"
+            "email": "xiaoyu@metalyoung.com",
+            "homepage": "https://github.com/metal-young/Yii2-Extension-image-tailor"
         }
     ],
     "require": {
